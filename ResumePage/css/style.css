@@ -82,7 +82,6 @@ img {
 .module-title{
     color: #999;
     display: inline-flex;
-
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -96,7 +95,7 @@ img {
 
 .module-title p{
     display: inline;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 
 .module-title-right{

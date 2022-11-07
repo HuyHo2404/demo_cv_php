@@ -18,6 +18,11 @@
         if(isset($_POST['thoigian'])){
             $thoigian = $_POST['thoigian'];
         }
+
+        $truong = str_replace('\'','\\\'', $truong);
+        $start_end = str_replace('\'','\\\'', $start_end);
+        $noidung = str_replace('\'','\\\'', $noidung);
+        $thoigian = str_replace('\'','\\\'', $thoigian);
         
         if($id != ''){
             //update
@@ -29,7 +34,7 @@
         }
         execute($sql);
         // direction to index.php
-        header('Location: index.php');
+        header('Location: index1.php');
         die();
     }
     $id = '';

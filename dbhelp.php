@@ -22,4 +22,5 @@ function executeResult($sql){
     //close connection
     mysqli_close($conn);
     return $list;
+
 }
