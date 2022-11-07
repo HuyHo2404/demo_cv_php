@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./ResumePage/css/style.css">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -14,45 +14,46 @@
 </head>
 <body>
     <div class="grid-container">
+        <form action="them.php" method="post">
         <div id="header">
             <div class="grid-1">
                 <div class="avatar">
-                    <img src="./img/Huy01.jpg" alt="img profile">
+                    <img src="./ResumePage/img/Huy01.jpg" alt="img profile">
                 </div>                 
                 <div class="module">
                     <div class="name">
-                        <input value="<?php echo $row['fullname'] ?? '' ?>" id="fullname" type="text" class="left-content-col-left" placeholder="Fullname" style="width: 500px; height: 25px; border: none; font-size: 30px; font-weight: 700; color: #32cd32; outline: none">
-                        <input value="<?php echo $row['nganhnghe'] ?? '' ?>" id="nganhnghe" type="text" class="left-content-col-left" placeholder="Job position" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
+                        <input value="<?php echo $edu['fullname'] ?? '' ?>" id="fullname" type="text" class="left-content-col-left" placeholder="Fullname" style="width: 500px; height: 25px; border: none; font-size: 30px; font-weight: 700; color: #32cd32; outline: none">
+                        <input value="<?php echo $edu['nganhnghe'] ?? '' ?>" id="nganhnghe" type="text" class="left-content-col-left" placeholder="Job position" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
                     </div>
                     <div class="module-title">
                         <div class="column-item module-title-left">
                             <div class="li">
-                                <span class="fa-solid fa-calendar"></span><input value="<?php echo $row['ngaysinh'] ?? '' ?>" id="ngaysinh" type="text" class="left-content-col-left" placeholder="Birthday" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
+                                <span class="fa-solid fa-calendar"></span><input value="<?php echo $edu['ngaysinh'] ?? '' ?>" id="ngaysinh" type="text" class="left-content-col-left" placeholder="Birthday" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
                             </div>
                             <div class="li">
-                                <span class="fa-solid fa-phone"></span></span><input value="<?php echo $row['sodt'] ?? '' ?>" id="sodt" type="text" class="left-content-col-left" placeholder="Phone number" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
+                                <span class="fa-solid fa-phone"></span></span><input value="<?php echo $edu['sodt'] ?? '' ?>" id="sodt" type="text" class="left-content-col-left" placeholder="Phone number" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
                             </div>
                             <div class="li">
-                                <span class="fa-solid fa-envelope"></span><input value="<?php echo $row['email'] ?? '' ?>" id="email" type="text" class="left-content-col-left" placeholder="Email" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
+                                <span class="fa-solid fa-envelope"></span><input value="<?php echo $edu['email'] ?? '' ?>" id="email" type="text" class="left-content-col-left" placeholder="Email" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
                             </div>
                         </div>
 
                         <div class="column-item module-title-right">
                             <div class="li">
-                                <span class="fa-brands fa-github"></span><input value="<?php echo $row['github'] ?? '' ?>" id="github" type="text" class="left-content-col-left" placeholder="https://github.com/HuyHo2404" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
+                                <span class="fa-brands fa-github"></span><input value="<?php echo $edu['github'] ?? '' ?>" id="github" type="text" class="left-content-col-left" placeholder="https://github.com/HuyHo2404" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
                             </div>
                             <div class="li">
-                                <span class="fa-solid fa-location-arrow"></span><input value="<?php echo $row['diachi'] ?? '' ?>" id="diachi" type="text" class="left-content-col-left" placeholder="Address" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
+                                <span class="fa-solid fa-location-arrow"></span><input value="<?php echo $edu['diachi'] ?? '' ?>" id="diachi" type="text" class="left-content-col-left" placeholder="Address" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
                             </div>
                             <div class="li">
-                                <span class="fa-solid fa-user"></span><input value="<?php echo $row['gioitinh'] ?? '' ?>" id="gioitinh" type="text" class="left-content-col-left" placeholder="Gender" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
+                                <span class="fa-solid fa-user"></span><input value="<?php echo $edu['gioitinh'] ?? '' ?>" id="gioitinh" type="text" class="left-content-col-left" placeholder="Gender" style="width: 300px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #999; margin-left: 10px; outline: none">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>    
             <div class="module-content">
-                <input value="<?php echo $row['gioithieu'] ?? '' ?>" id="gioithieu" type="text" class="left-content-col-left" placeholder="Introduce" style="width: 945px; height: 130px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
+                <input value="<?php echo $edu['gioithieu'] ?? '' ?>" id="gioithieu" type="text" class="left-content-col-left" placeholder="Introduce" style="width: 945px; height: 130px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
             </div>
         </div>
 
@@ -75,17 +76,17 @@
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <input value="<?php echo $row['truong'] ?? '' ?>" id="truong" type="text" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
+                                    <input value="<?php echo $edu['truong'] ?? '' ?>" id="truong" type="text" name="truong" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
                                     <!--<h5>Duy Tan University</h5>-->
                                 </div>   
                                 <div class="edu-date">
-                                    <input value="<?php echo $row['start_end'] ?? '' ?>" id="start_end" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
+                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" name="start_end" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
                                     <!--<p>09/2019 - 04/2022</p>-->
                                 </div>
                             </div>   
                             <div class="content-des">
-                                <input value="<?php echo $row['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Courses/Subjects" style="width: 500px; height: 25px; border: none; font-size: 20px; outline: none; margin-bottom: 15px">
-                                <input value="<?php echo $row['thoigian'] ?? '' ?>" id="thoigian" type="text" class="left-content-col-left" placeholder="4th year student" style="width: 500px; height: 25px; border: none; font-size: 20px; outline: none">
+                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" name="noidung" class="left-content-col-left" placeholder="Courses/Subjects" style="width: 500px; height: 25px; border: none; font-size: 20px; outline: none; margin-bottom: 15px">
+                                <input value="<?php echo $edu['thoigian'] ?? '' ?>" id="thoigian" type="text" name="thoigian" class="left-content-col-left" placeholder="4th year student" style="width: 500px; height: 25px; border: none; color:#999; font-size: 20px; outline: none">
                             </div>            
                         </div>
                     </div>
@@ -104,29 +105,28 @@
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <h5>Some Group Projects</h5>
+                                    <input value="<?php echo $edu['kynang'] ?? '' ?>" id="kynang" type="text" class="left-content-col-left" placeholder="Company name" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
                                 </div>   
                                 <div class="edu-date"> 
-                                    <input value="<?php echo $row['start_end'] ?? '' ?>" id="date_exp" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
+                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
                                 </div>
                             </div>   
                             <div class="content-des">
-                                <p>- Human Resource Management.</p>
-                                <p>- Room management.</p>
-                                <p>- Timekeeping management</p>
+                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
                             </div>            
                         </div>
+
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <h5>Personal Projects</h5>
+                                    <input value="<?php echo $edu['kynang'] ?? '' ?>" id="kynang" type="text" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
                                 </div>   
                                 <div class="edu-date">
-                                    <input value="<?php echo $row['start_end'] ?? '' ?>" id="date_exp" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
+                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
                                 </div>
                             </div>   
                             <div class="content-des">
-                                <p>- Library management.</p>
+                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
                             </div>            
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <h5>Volunteers</h5>
+                                    <input value="<?php echo $edu['kynang'] ?? '' ?>" id="kynang" type="text" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
                                 </div>   
                                 <div class="edu-date">
                                     <input value="<?php echo $row['start_end'] ?? '' ?>" id="date_exp" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none" >
@@ -153,8 +153,7 @@
                                 </div>
                             </div>   
                             <div class="content-des">
-                                <p>- Gathering gifts and distributing to the victims after waiting for floods in Quang Tri.</p>
-                                <p>- Share and encourage them to overcome difficult times, help them have optimistic thoughts.</p>
+                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
                             </div>            
                         </div>
                     </div>
@@ -239,20 +238,19 @@
                                     <h5>Duy Tan University</h5>
                                 </div>   
                                 <div class="edu-date">
-                                <input value="<?php echo $row['start_end'] ?? '' ?>" id="start_end" type="text" class="right-content-col-right" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
+                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" class="right-content-col-right" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
                                 </div>
                             </div>   
                             <div class="content-des">
-                                <p>- Improve knowledge in the field of Information Technology.</p>
-                                <p>- Improve English communication in the next 1-2 years.</p>
-                                <p>- Stabilize and try to grow.</p>
+                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
                             </div>            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-success" onclick="window.open('input.php','_self')">Add education</button>
+        <button type="submit" class="btn btn-success">Add</button>  
+        </form>
     </div>
 
 </body>

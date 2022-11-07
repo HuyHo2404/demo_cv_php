@@ -20,7 +20,7 @@ require_once('dbhelp.php');
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid">       
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h2 class="text-center">Education Management</h2>
@@ -48,13 +48,13 @@ require_once('dbhelp.php');
                             $sql = 'select * from education where truong like "%' . $_GET['s'] . '%"';
                         } else {
                             $sql = 'select * from education';
-                        }
+                        }   
                         $eduList = executeResult($sql);
                         foreach ($eduList as $edu) {
                             echo '<tr>
                                 <td>' . $edu['id'] . '</td>
                                 <td>' . $edu['truong'] . '</td>
-                                <td>' . $edu['start_end'] . '</td>
+                                <td>' . $edu['start_end'] . '</td>  
                                 <td>' . $edu['noidung'] . '</td>
                                 <td>' . $edu['thoigian'] . '</td>
                                 <td><button class="btn btn-warning" onclick=\'window.open("input.php?id=' . $edu['id'] . '","_self")\'>Edit</button></td>
@@ -65,7 +65,7 @@ require_once('dbhelp.php');
                     </tbody>
                 </table>
                 <button class="btn btn-success" onclick="window.open('input.php','_self')">Add education</button>
-                <button class="btn btn-primary" onclick="window.open('./ResumePage/index.php','_self')">Go to CV page</button>
+                <button class="btn btn-primary" onclick="window.open('index.php','_self')">Go to CV page</button>
             </div>
         </div>
     </div>

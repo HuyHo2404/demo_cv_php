@@ -19,6 +19,7 @@
             $thoigian = $_POST['thoigian'];
         }
 
+        //fix loi sql intraction
         $truong = str_replace('\'','\\\'', $truong);
         $start_end = str_replace('\'','\\\'', $start_end);
         $noidung = str_replace('\'','\\\'', $noidung);

@@ -44,6 +44,7 @@ body{
     background: white;
     padding: 15px;
     border-radius: 15px;
+    margin-bottom: 23px;
 }
 
 .avatar{
@@ -116,6 +117,16 @@ img {
     box-shadow: 0 0 20px 0 rgb(97 97 97 / 15%);
 }
 
+.btn-success{
+    padding: 15px 25px;
+    background: #999;
+    border: none;   
+    cursor: pointer;
+    float: right;
+    border-radius: 10px;
+
+}
+
 .education-layout{
     height: 240px;
 }
@@ -182,6 +193,7 @@ img {
 .content-des {
     font-size: 18px;
 }
+
 
 /* Responsive */
 @media screen and (max-width: 960px) {
