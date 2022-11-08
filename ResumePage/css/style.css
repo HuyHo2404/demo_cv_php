@@ -34,6 +34,10 @@ body{
     gap: 10px;
 }
 
+.column-left {
+
+}
+
 .grid-container > div{
     padding: 20px 0;
     font-size: 20px;
@@ -124,10 +128,10 @@ img {
     cursor: pointer;
     float: right;
     border-radius: 10px;
-
+    margin-right: 5px;
 }
 
-.education-layout{
+/*.education-layout{
     height: 240px;
 }
 
@@ -141,7 +145,7 @@ img {
 
 .skill-layout{
     height: 610px;
-}
+} */
 
 .part-above{
     display: inline block;

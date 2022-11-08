@@ -35,7 +35,7 @@
         }
         execute($sql);
         // direction to index.php
-        header('Location: index1.php');
+        header('Location: index-edu.php');
         die();
     }
     $id = '';

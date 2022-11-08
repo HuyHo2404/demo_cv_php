@@ -1,5 +1,9 @@
+<?php
+require_once('dbhelp.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,14 +16,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>CV</title>
 </head>
+
 <body>
     <div class="grid-container">
-        <form action="them.php" method="post">
         <div id="header">
             <div class="grid-1">
                 <div class="avatar">
                     <img src="./ResumePage/img/Huy01.jpg" alt="img profile">
-                </div>                 
+                </div>
                 <div class="module">
                     <div class="name">
                         <input value="<?php echo $edu['fullname'] ?? '' ?>" id="fullname" type="text" class="left-content-col-left" placeholder="Fullname" style="width: 500px; height: 25px; border: none; font-size: 30px; font-weight: 700; color: #32cd32; outline: none">
@@ -51,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
             <div class="module-content">
                 <input value="<?php echo $edu['gioithieu'] ?? '' ?>" id="gioithieu" type="text" class="left-content-col-left" placeholder="Introduce" style="width: 945px; height: 130px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
             </div>
@@ -71,24 +75,31 @@
                             </div>
                             <div class="above-right">
                                 <i class="fa-solid fa-list-ul"></i>
-                            </div>    
+                            </div>
                         </div>
-                        <div class="edu-below">
-                            <div class="section-info">
-                                <div class="edu-school">
-                                    <input value="<?php echo $edu['truong'] ?? '' ?>" id="truong" type="text" name="truong" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
-                                    <!--<h5>Duy Tan University</h5>-->
-                                </div>   
-                                <div class="edu-date">
-                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" name="start_end" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
-                                    <!--<p>09/2019 - 04/2022</p>-->
-                                </div>
-                            </div>   
-                            <div class="content-des">
-                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" name="noidung" class="left-content-col-left" placeholder="Courses/Subjects" style="width: 500px; height: 25px; border: none; font-size: 20px; outline: none; margin-bottom: 15px">
-                                <input value="<?php echo $edu['thoigian'] ?? '' ?>" id="thoigian" type="text" name="thoigian" class="left-content-col-left" placeholder="4th year student" style="width: 500px; height: 25px; border: none; color:#999; font-size: 20px; outline: none">
-                            </div>            
-                        </div>
+                        <?php
+                        $sql = 'select * from education';
+                        $eduList = executeResult($sql);
+                        foreach ($eduList as $edu) {
+                            echo '
+                                            <div class="edu-below">
+                                                <div class="section-info">
+                                                    <div class="edu-school">
+                                                        <h5>' . $edu['truong'] . '</h5>
+                                                    </div>
+                                                    <div class="edu-date">
+                                                        <p>' . $edu['start_end'] . '</p>
+                                                    </div>
+                                                </div>    
+                                                <div class="content-des">
+                                                        <p>' . $edu['noidung'] . '</p>
+                                                        <p>' . $edu['thoigian'] . '</p>
+                                                                                                                                
+                                                </div>
+                                            </div>
+                                        ';
+                        }
+                        ?>
                     </div>
 
                     <!--Work experience-->
@@ -100,34 +111,36 @@
                             </div>
                             <div class="above-right">
                                 <i class="fa-solid fa-list-ul"></i>
-                            </div>    
+                            </div>
                         </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <input value="<?php echo $edu['kynang'] ?? '' ?>" id="kynang" type="text" class="left-content-col-left" placeholder="Company name" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
-                                </div>   
-                                <div class="edu-date"> 
-                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
+                                    <h5>Some Group Projects</h5>
                                 </div>
-                            </div>   
+                                <div class="edu-date">
+                                    <p>09/2020 - 04/2021</p>
+                                </div>
+                            </div>
                             <div class="content-des">
-                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
-                            </div>            
+                                <p>- Human Resource Management.</p>
+                                <p>- Room management.</p>
+                                <p>- Timekeeping management</p>
+                            </div>
                         </div>
 
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <input value="<?php echo $edu['kynang'] ?? '' ?>" id="kynang" type="text" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
-                                </div>   
-                                <div class="edu-date">
-                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
+                                    <h5>Personal Projects</h5>
                                 </div>
-                            </div>   
+                                <div class="edu-date">
+                                    <p>09/2022 - 04/2022</p>
+                                </div>
+                            </div>
                             <div class="content-des">
-                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
-                            </div>            
+                                <p>- Library management.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -140,24 +153,24 @@
                             </div>
                             <div class="above-right">
                                 <i class="fa-solid fa-list-ul"></i>
-                            </div>    
+                            </div>
                         </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
-                                    <input value="<?php echo $edu['kynang'] ?? '' ?>" id="kynang" type="text" class="left-content-col-left" placeholder="School" style="width: 200px; height: 25px; border: none; font-size: 20px; font-weight: 500; color: #32cd32; outline: none">
-                                </div>   
-                                <div class="edu-date">
-                                    <input value="<?php echo $row['start_end'] ?? '' ?>" id="date_exp" type="text" class="left-content-col-left" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none" >
-                                    <!--<p style="font-weight: 900;">Volunteers group</p>-->
+                                    <h5>Volunteers</h5>
                                 </div>
-                            </div>   
+                                <div class="edu-date">
+                                    <p style="font-weight: 900;">Volunteers group</p>
+                                </div>
+                            </div>
                             <div class="content-des">
-                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
-                            </div>            
+                                <p>- Gathering gifts and distributing to the victims after waiting for floods in Quang Tri.</p>
+                                <p>- Share and encourage them to overcome difficult times, help them have optimistic thoughts.</p>
+                            </div>
                         </div>
                     </div>
-                </div>  
+                </div>
 
                 <!--Column right-->
                 <div class="column-right">
@@ -171,53 +184,53 @@
                             </div>
                             <div class="above-right">
                                 <i class="fa-solid fa-list-ul"></i>
-                            </div>    
-                        </div>                      
+                            </div>
+                        </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
                                     <h5>Programming language</h5>
-                                </div>   
-                                <div class="edu-date"> 
-                                    <input value="<?php echo $row['start_end'] ?? '' ?>" id="date_exp" type="text" class="right-content-col-right" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
                                 </div>
-                            </div>   
+                                <div class="edu-date">
+                                    <p>09/2019 - 04/2022</p>
+                                </div>
+                            </div>
                             <div class="content-des">
                                 <p style="color: #999;">C++ Programming.</p>
                                 <p style="color: #999;">C# Programming.</p>
                                 <p style="color: #999;">Programming HTML, CSS.</p>
                                 <p style="color: #999;">Javascript Programming.</p>
-                            </div>            
+                            </div>
                         </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
                                     <h5>Office information</h5>
-                                </div>   
-                            </div>   
+                                </div>
+                            </div>
                             <div class="content-des">
                                 <p>- Good use of Word, Excel, Power Point tools.</p>
-                            </div>            
+                            </div>
                         </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
                                     <h5>Working group.</h5>
-                                </div>   
-                            </div>   
+                                </div>
+                            </div>
                             <div class="content-des">
                                 <p>- Good ability to work in a team and independently.</p>
-                            </div>            
+                            </div>
                         </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
                                     <h5>English</h5>
-                                </div>   
-                            </div>   
+                                </div>
+                            </div>
                             <div class="content-des">
                                 <p>- Ability to communicate in English normally.</p>
-                            </div>            
+                            </div>
                         </div>
                     </div>
 
@@ -230,28 +243,32 @@
                             </div>
                             <div class="above-right">
                                 <i class="fa-solid fa-list-ul"></i>
-                            </div>    
+                            </div>
                         </div>
                         <div class="edu-below">
                             <div class="section-info">
                                 <div class="edu-school">
                                     <h5>Duy Tan University</h5>
-                                </div>   
-                                <div class="edu-date">
-                                    <input value="<?php echo $edu['start_end'] ?? '' ?>" id="start_end" type="text" class="right-content-col-right" placeholder="Bắt đầu - Kết thúc" style="width: 140px; height: 25px; border: none; background-color: #e5f7ed; text-align: center; font-size: 15px; outline: none">
                                 </div>
-                            </div>   
+                                <div class="edu-date">
+                                    <p>09/2020 - 04/2022</p>
+                                </div>
+                            </div>
                             <div class="content-des">
-                                <input value="<?php echo $edu['noidung'] ?? '' ?>" id="noidung" type="text" class="left-content-col-left" placeholder="Detailed job description" style="width: 400px; height: 30px; border: none; font-size: 20px; font-weight: 500; color: #999; outline: none">
-                            </div>            
+                                <p>- Improve knowledge in the field of Information Technology.</p>
+                                <p>- Improve English communication in the next 1-2 years.</p>
+                                <p>- Stabilize and try to grow.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success">Add</button>  
-        </form>
+        <!-- <<button type="submit" class="btn-success">Add</button>
+        <button type="submit" class="btn-success">Update</button>  
+        <button type="submit" class="btn-success">Delete</button> -->
     </div>
 
 </body>
+
 </html>

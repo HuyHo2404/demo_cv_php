@@ -22,6 +22,9 @@ foreach ($eduList as $edu) {
         <td>' . $edu['start_end'] . '</td>
         <td>' . $edu['noidung'] . '</td>
         <td>' . $edu['thoigian'] . '</td>
+        <td><button class="btn-warning" onclick=\'window.open("index.php?id=' . $edu['id'] . '","_self")\'>Edit</button></td>
+        <td><button class="btn-danger" onclick="deleteEducation(' . $edu['id'] . ')">Delete</button></td>
     </tr>';
+    
 }
 ?>
