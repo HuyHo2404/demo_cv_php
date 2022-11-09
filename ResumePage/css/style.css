@@ -123,12 +123,16 @@ img {
 
 .btn-success{
     padding: 15px 25px;
-    background: #999;
+    background: #4CAF50;
+    color: #fff;
     border: none;   
     cursor: pointer;
-    float: right;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
     border-radius: 10px;
-    margin-right: 5px;
+    /*margin-right: 5px;
+    float: right;*/
 }
 
 /*.education-layout{

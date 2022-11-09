@@ -1,5 +1,5 @@
 <?php
-require_once('dbhelp.php');
+require_once('../dbhelp.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ require_once('dbhelp.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="./ResumePage/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -22,7 +22,7 @@ require_once('dbhelp.php');
         <div id="header">
             <div class="grid-1">
                 <div class="avatar">
-                    <img src="./ResumePage/img/Huy01.jpg" alt="img profile">
+                    <img src="./img/Huy01.jpg" alt="img profile">
                 </div>
                 <div class="module">
                     <div class="name">
@@ -97,7 +97,7 @@ require_once('dbhelp.php');
                                                                                                                                 
                                                 </div>
                                             </div>
-                                        ';
+                            ';
                         }
                         ?>
                     </div>
@@ -263,12 +263,9 @@ require_once('dbhelp.php');
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- <<button type="submit" class="btn-success">Add</button>
-        <button type="submit" class="btn-success">Update</button>  
-        <button type="submit" class="btn-success">Delete</button> -->
-    </div>
-
+        </div>    
+        <button class="btn-success" onclick="window.open('../input.php','_self')">Add</button>            
+    </div>  
 </body>
 
 </html>

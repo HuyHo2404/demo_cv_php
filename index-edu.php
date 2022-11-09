@@ -65,7 +65,7 @@ require_once('dbhelp.php');
                     </tbody>
                 </table>
                 <button class="btn btn-success" onclick="window.open('input.php','_self')">Add education</button>
-                <button class="btn btn-primary" onclick="window.open('index.php','_self')">Go to CV page</button>
+                <button class="btn btn-primary" onclick="window.open('./ResumePage/index.php','_self')">Go to CV page</button>
             </div>
         </div>
     </div>
